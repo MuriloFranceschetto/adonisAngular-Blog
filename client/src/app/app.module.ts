@@ -9,12 +9,14 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ThemeModule } from './theme.module';
 import { PostsComponent } from './pages/posts/posts.component';
+import { NewPostComponent } from './pages/posts/new-post/new-post.component';
  
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    PostsComponent
+    PostsComponent,
+    NewPostComponent
   ], 
   imports: [
     BrowserModule, 
