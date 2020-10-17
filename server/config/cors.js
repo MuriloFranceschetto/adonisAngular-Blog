@@ -16,7 +16,7 @@ module.exports = {
   | Function - Receives the current origin and should return one of the above values.
   |
   */
-  origin: false,
+  origin: 'http://localhost:4200',
 
   /*
   |--------------------------------------------------------------------------
@@ -62,7 +62,7 @@ module.exports = {
   | Array - An array of allowed headers
   |
   */
-  exposeHeaders: false,
+  exposeHeaders: true,
 
   /*
   |--------------------------------------------------------------------------
@@ -72,8 +72,8 @@ module.exports = {
   | Define Access-Control-Allow-Credentials header. It should always be a
   | boolean.
   |
-  */
-  credentials: false,
+  */ 
+  credentials: true,
 
   /*
   |--------------------------------------------------------------------------
