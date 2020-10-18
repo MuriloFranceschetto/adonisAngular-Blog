@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ThemeModule } from './theme.module';
 import { PostsComponent } from './pages/posts/posts.component';
 import { NewPostComponent } from './pages/posts/new-post/new-post.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
  
 @NgModule({
   declarations: [
@@ -23,7 +24,9 @@ import { NewPostComponent } from './pages/posts/new-post/new-post.component';
     AppRoutingModule, 
     ThemeModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
     ThemeModule,

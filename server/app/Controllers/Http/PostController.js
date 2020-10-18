@@ -5,7 +5,7 @@ const Post = use('App/Models/Post');
 class PostController {
     
     async index() {
-        return await Post.query().fetch();
+        return await Post.query().orderBy('created_at', 'desc').fetch();
     }
     
     async store({ request }) {

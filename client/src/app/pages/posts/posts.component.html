@@ -1,6 +1,7 @@
 
 
-<div style="padding-bottom: 15px;">
+
+<div style="padding-bottom: 15px;" [formGroup]="form">
     <mat-card *ngFor="let post of posts" style="margin-bottom: 15px;">
 
         <mat-card-header *ngIf="!post.new">
@@ -10,8 +11,11 @@
         </mat-card-header>
 
         <mat-card-header *ngIf="post.new">
-            <mat-card-title id="newtitle" contenteditable style="word-break: break-word !important;">
-                {{ post.title }}
+            <mat-card-title>
+                <mat-form-field fxFlex >
+                    <mat-label>Title</mat-label>
+                    <input matInput formControlName="title" required>
+                </mat-form-field>
             </mat-card-title>
         </mat-card-header>
 
@@ -23,18 +27,20 @@
                 {{ post.content }}
             </p>
         </mat-card-content>
+
         <mat-card-content *ngIf="post.new">
-            <p style="word-break: break-word !important;" contenteditable>
-                {{ post.content }}
-            </p>
+            <mat-form-field fxFlex>
+                <mat-label>Content</mat-label>
+                <textarea matInput formControlName="content" required></textarea>
+            </mat-form-field>
         </mat-card-content>
 
         <mat-card-actions *ngIf="!post.new">
-            <button mat-button>LIKE</button>
-            <button mat-button>SHARE</button>
+            <button mat-raised-button color="accent">LIKE</button>
         </mat-card-actions>
+
         <mat-card-actions *ngIf="post.new">
-            <button mat-button (click)="publish()">PUBLISH</button>
+            <button mat-raised-button color="accent" (click)="publish()" [disabled]="form.invalid">PUBLISH</button>
         </mat-card-actions>
 
     </mat-card>

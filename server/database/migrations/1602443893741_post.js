@@ -10,6 +10,7 @@ class PostSchema extends Schema {
       table.integer('user').notNullable().unsigned().references('id').inTable('users').onUpdate('CASCADE').onDelete('CASCADE');
       table.string('title').notNullable();
       table.string('content').notNullable();
+      table.integer('likes');
       table.timestamps();
     })
   }

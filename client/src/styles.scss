@@ -27,13 +27,17 @@ $client-theme: mat-light-theme((
   mat-toolbar, mat-card {
     background-color: rgb(68, 68, 68);
   }
-  mat-card-content, mat-card-subtitle, mat-card-title {
-    color: rgb(221, 221, 221);
+  mat-card-content, mat-card-subtitle, mat-card-title, mat-form-field, mat-label {
+    color: rgb(221, 221, 221) !important;
   }
 }
 
+.mat-card-header-text {
+  width: 100% !important;
+}
+
 .container {
-  margin: 10px 10%;
+  margin: 10px 30%;
 }
 
 .bg-light {

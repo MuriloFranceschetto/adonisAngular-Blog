@@ -1,4 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
@@ -69,10 +70,12 @@ const angularModules = [
 
 @NgModule({
   imports: [
+    FlexLayoutModule,
   ],
   declarations: [ 
   ],
   exports: [
+    FlexLayoutModule,
     ...angularModules, 
   ],
   schemas: [
