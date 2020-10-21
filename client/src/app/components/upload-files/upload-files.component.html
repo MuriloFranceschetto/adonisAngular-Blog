@@ -1,0 +1,13 @@
+
+
+<div>
+    <div id="yourBtn" class="btnInput" (click)="openFiles()">
+        <span>Upload de Imagens</span>
+    </div>
+    <div class="hideInput">
+        <input id="upfile" type="file"
+               (change)="loadFile($event.target.files)"
+               accept="image/*"
+               multiple/>
+    </div>
+</div>

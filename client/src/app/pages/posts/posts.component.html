@@ -12,15 +12,25 @@
 
         <mat-card-header *ngIf="post.new">
             <mat-card-title>
-                <mat-form-field fxFlex >
+                <mat-form-field fxFlex>
                     <mat-label>Title</mat-label>
                     <input matInput formControlName="title" required>
                 </mat-form-field>
             </mat-card-title>
         </mat-card-header>
 
+        <div *ngIf="post.new">
+            <app-upload-files (getFiles)="setImagesPost($event)"></app-upload-files>
+            <div *ngFor="let img of form.controls.images.value">
+                <img mat-card-image [src]="img">
+            </div>
+        </div>
 
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <div *ngIf="!post.new">
+            <div *ngFor="let img of post.images">
+                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+            </div>
+        </div>
         
         <mat-card-content *ngIf="!post.new">
             <p style="word-break: break-word !important;">

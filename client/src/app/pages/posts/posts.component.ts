@@ -20,13 +20,14 @@ export class PostsComponent implements OnInit {
     content: 'Type Here the Content...',
     images: [],
   }
-
+  
   public form = new FormGroup({
+    id: new FormControl(1, Validators.required),
     user: new FormControl(1, Validators.required),
     title: new FormControl(null, Validators.required),
     content: new FormControl(null),
     images: new FormControl([]),
-  })
+  });
   
   constructor(
     private postsService: PostsService,
@@ -56,22 +57,24 @@ export class PostsComponent implements OnInit {
     }
     
     publish() {
+      this.posts = [];
       console.log(this.form.getRawValue());
       this.postsService.post(this.form.getRawValue())
-        .then(() => {
-          console.log('Post Registrado com Sucesso')
-        })
-        .catch(err => console.log(err))
+      .then(() => {
+        console.log('Post Registrado com Sucesso');
+        this.getAllPosts();
+      })
+      .catch(err => console.log(err))
     }
     
-    insertImage() {
+    setImagesPost(images) {
+      this.form.controls.images.setValue([...this.form.value.images, ...images]);
+    }
+    
+    like(postID) {
       
     }
-
-    like(postID) {
-
-    }
-
+    
     coment(postID, data) {
       
     }

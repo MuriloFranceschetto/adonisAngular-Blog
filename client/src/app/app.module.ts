@@ -11,13 +11,15 @@ import { ThemeModule } from './theme.module';
 import { PostsComponent } from './pages/posts/posts.component';
 import { NewPostComponent } from './pages/posts/new-post/new-post.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UploadFilesComponent } from './components/upload-files/upload-files.component';
  
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     PostsComponent,
-    NewPostComponent
+    NewPostComponent,
+    UploadFilesComponent
   ], 
   imports: [
     BrowserModule, 
