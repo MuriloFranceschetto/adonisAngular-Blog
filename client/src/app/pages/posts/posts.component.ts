@@ -31,7 +31,6 @@ export class PostsComponent implements OnInit {
   
   constructor(
     private postsService: PostsService,
-    private dialog: MatDialog,
     ) { }
     
     ngOnInit(): void {
@@ -41,6 +40,7 @@ export class PostsComponent implements OnInit {
     getAllPosts() {
       this.postsService.getAll()
       .then((response: Object[]) => {
+        console.log(response);
         this.posts = response;
       })
       .catch(err => {
@@ -70,9 +70,19 @@ export class PostsComponent implements OnInit {
     setImagesPost(images) {
       this.form.controls.images.setValue([...this.form.value.images, ...images]);
     }
+
+    removeImage(index) {
+      let arrayAux = this.form.value.images;
+      arrayAux.splice(index, 1);
+      this.form.controls.images.setValue(arrayAux);
+    }
     
-    like(postID) {
-      
+    like(id, i) {
+      this.postsService.like(id)
+      .then((response) => {
+        this.posts[i]['likes'] = response;
+      })
+      .catch(err => console.log(err))
     }
     
     coment(postID, data) {

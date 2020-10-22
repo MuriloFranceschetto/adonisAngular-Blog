@@ -35,6 +35,15 @@ class PostController {
     async getByUser({ params }) {
         return await Post.query().where('user', '=', params.user).fetch();
     }
+
+    async like({ request }) {
+        let data = request.only(['postId']);
+        let post = await Post.findOrFail(data.postId);
+        let likes = post.$attributes.likes + 1;
+        await post.merge({ likes });
+        await post.save(); 
+        return post.$attributes.likes;
+    }
     
 }
 

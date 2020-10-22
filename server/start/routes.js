@@ -22,6 +22,7 @@ Route.group(() => {
 Route.group(() => {
     Route.resource('posts', 'PostController').apiOnly();
     Route.get('posts/byuser/:user', 'PostController.getByUser');
+    Route.post('posts/like', 'PostController.like');
 });
 
 
