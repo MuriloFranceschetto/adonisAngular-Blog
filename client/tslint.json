@@ -61,11 +61,11 @@
     "no-switch-case-fall-through": true,
     "no-var-requires": false,
     "object-literal-key-quotes": [
-      true,
+      false,
       "as-needed"
     ],
     "quotemark": [
-      true,
+      false,
       "single"
     ],
     "semicolon": {
@@ -75,15 +75,15 @@
     },
     "space-before-function-paren": {
       "options": {
-        "anonymous": "never",
+        "anonymous": "always",
         "asyncArrow": "always",
         "constructor": "never",
         "method": "never",
-        "named": "never"
+        "named": "always"
       }
     },
     "typedef": [
-      true,
+      false,
       "call-signature"
     ],
     "typedef-whitespace": {
