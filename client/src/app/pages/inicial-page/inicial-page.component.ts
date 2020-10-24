@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 
 export interface Tile {
-    color: string;
     cols: number;
     rows: number;
     text: string;
+    border: string;
 }
 
 @Component({
@@ -18,10 +18,16 @@ export class InicialPageComponent implements OnInit {
     }
 
     tiles: Tile[] = [
-        {text: 'One', cols: 2, rows: 4, color: 'lightblue'},
-        {text: 'Two', cols: 2, rows: 4, color: 'lightgreen'},
-        {text: 'Three', cols: 2, rows: 4, color: 'lightpink'},
-        {text: 'Four', cols: 2, rows: 4, color: '#DDBDF1'},
+        {text: 'One', cols: 4, rows: 1, border: '1px solid white'},
+        {text: 'Two', cols: 2, rows: 4, border: '1px solid white'},
+        {text: 'Three', cols: 2, rows: 4, border: '1px solid white'},
+        {text: 'Four', cols: 2, rows: 4, border: '1px solid white'},
+        {text: 'Four', cols: 2, rows: 4, border: '1px solid white'},
+        {text: 'Four', cols: 2, rows: 4, border: '1px solid white'},
+        {text: 'Four', cols: 2, rows: 4, border: '1px solid white'},
+        {text: 'Four', cols: 2, rows: 4, border: '1px solid white'},
+        {text: 'Four', cols: 2, rows: 4, border: '1px solid white'},
+        {text: 'Four', cols: 2, rows: 4, border: '1px solid white'},
     ];
 
     ngOnInit(): void {

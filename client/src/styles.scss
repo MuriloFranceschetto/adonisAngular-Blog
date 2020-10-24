@@ -1,7 +1,7 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
+
 @include mat-core();
 
 $client-primary: mat-palette($mat-indigo);
@@ -9,65 +9,83 @@ $client-accent: mat-palette($mat-pink, A200, A100, A400);
 $client-warn: mat-palette($mat-red);
 
 $client-theme: mat-light-theme((
-color: (
-primary: $client-primary,
-accent: $client-accent,
-warn: $client-warn,
-)
+    color: (
+        primary: $client-primary,
+        accent: $client-accent,
+        warn: $client-warn,
+    )
 ));
 
 @include angular-material-theme($client-theme);
 
 .bg-dark {
-  background-color: rgb(34, 34, 34);
-  color: rgb(221, 221, 221);
-  span {
-    color: rgb(221, 221, 221) !important;
-  }
-  mat-toolbar, mat-card {
-    background-color: rgb(68, 68, 68);
-  }
-  mat-card-content, mat-card-subtitle, mat-card-title, mat-form-field, mat-label {
-    color: rgb(221, 221, 221) !important;
-  }
+    background-color: rgb(34, 34, 34);
+    color: rgb(221, 221, 221);
+
+    span {
+        color: rgb(221, 221, 221) !important;
+    }
+
+    mat-toolbar, mat-card {
+        background-color: rgb(68, 68, 68);
+    }
+
+    mat-card-content, mat-card-subtitle, mat-card-title, mat-form-field, mat-label {
+        color: rgb(221, 221, 221) !important;
+    }
+}
+
+mat-grid-tile {
+    word-break: break-word;
 }
 
 .snackErro {
-  background-color: rgb(151, 36, 36);
-  color: rgb(255, 255, 255) !important;
+    background-color: rgb(151, 36, 36);
+    color: rgb(255, 255, 255) !important;
 }
+
 .snackSucess {
-  background-color: rgb(36, 151, 70);
-  color: rgb(255, 255, 255) !important;
+    background-color: rgb(36, 151, 70);
+    color: rgb(255, 255, 255) !important;
 }
 
 mat-card {
-  margin-bottom: 15px;
-  .zoom:hover {
-    transform: scale(1.03);
-    transition: 0.7s;
-    img {
-      box-shadow: inset 0 0 1em rgba(0, 0, 0, 0.664), 0 0 1em rgba(0, 0, 0, 0.664);
-      transition: 1s;
-      border-radius: 7px !important;
-    }
-  }
-  
-  mat-card-header {
     margin-bottom: 15px;
-    .mat-card-header-text {
-      width: 100% !important;
+
+    .zoom:hover {
+        transform: scale(1.03);
+        transition: 0.7s;
+
+        img {
+            box-shadow: inset 0 0 1em rgba(0, 0, 0, 0.664), 0 0 1em rgba(0, 0, 0, 0.664);
+            transition: 1s;
+            border-radius: 7px !important;
+        }
     }
-  }
+
+    mat-card-header {
+        margin-bottom: 15px;
+
+        .mat-card-header-text {
+            width: 100% !important;
+        }
+    }
 }
 
 .container {
-  margin: 10px 30%;
+    margin: 10px 30%;
 }
 
 .bg-light {
-  background-color: rgb(221, 221, 221);
-  color: rgb(34, 34, 34);
+    background-color: rgb(221, 221, 221);
+    color: rgb(34, 34, 34);
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
